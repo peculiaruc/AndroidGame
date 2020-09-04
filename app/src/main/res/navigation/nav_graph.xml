@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="com.pecpaker.androidgame.ui.TitleFragment"
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_title" >
+        <action
+            android:id="@+id/action_titleFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.pecpaker.androidgame.ui.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_gameFragment_to_gameOverFragment2"
+            app:destination="@id/gameOverFragment2" />
+        <action
+            android:id="@+id/action_gameFragment_to_gamewonFragment"
+            app:destination="@id/gamewonFragment"
+            app:popUpTo="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gameOverFragment2"
+        android:name="com.pecpaker.androidgame.ui.GameOverFragment"
+        android:label="fragment_game_over"
+        tools:layout="@layout/fragment_game_over" >
+        <action
+            android:id="@+id/action_gameOverFragment2_to_gameFragment"
+            app:destination="@id/gameFragment"
+            app:popUpTo="@id/titleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/gamewonFragment"
+        android:name="com.pecpaker.androidgame.ui.GamewonFragment"
+        android:label="fragment_gamewon"
+        tools:layout="@layout/fragment_gamewon" >
+        <action
+            android:id="@+id/action_gamewonFragment_to_gameFragment"
+            app:destination="@id/gameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.pecpaker.androidgame.ui.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+</navigation>
