@@ -27,7 +27,7 @@ class GamewonFragment : Fragment() {
         val binding: FragmentGamewonBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_gamewon, container, false
         )
-        binding.youWinImage.setOnClickListener { view: View ->
+        binding.nextMatchButton.setOnClickListener { view: View ->
             view.findNavController()
                 .navigate(GamewonFragmentDirections.actionGamewonFragmentToGameFragment())
         }
